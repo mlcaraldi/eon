@@ -1,0 +1,854 @@
+{
+  "name": "Eon",
+  "version": "1.0.0",
+  "direction": "Strata",
+  "date": "2026-11-08",
+  "color": {
+    "light": {
+      "background": "#F2F0E9",
+      "foreground": "#1B211E",
+      "card": "#FBFAF6",
+      "card-foreground": "#1B211E",
+      "popover": "#FBFAF6",
+      "popover-foreground": "#1B211E",
+      "primary": "#1B211E",
+      "primary-foreground": "#FBFAF6",
+      "secondary": "#E3DFD3",
+      "secondary-foreground": "#1B211E",
+      "muted": "#E9E6DC",
+      "muted-foreground": "#575E58",
+      "accent": "#E9E6DC",
+      "accent-foreground": "#1B211E",
+      "destructive": "#A3352A",
+      "destructive-foreground": "#FFFFFF",
+      "border": "#D9D5C9",
+      "input": "#80857E",
+      "ring": "#35553F",
+      "chart-1": "#2A312D",
+      "chart-2": "#4A6274",
+      "chart-3": "#2C5E70",
+      "chart-4": "#A3352A",
+      "chart-5": "#B39463",
+      "sidebar": "#FBFAF6",
+      "sidebar-foreground": "#1B211E",
+      "sidebar-primary": "#1B211E",
+      "sidebar-primary-foreground": "#FBFAF6",
+      "sidebar-accent": "#E9E6DC",
+      "sidebar-accent-foreground": "#1B211E",
+      "sidebar-border": "#D9D5C9",
+      "sidebar-ring": "#35553F",
+      "surface-sunken": "#E9E6DC",
+      "sandstone": "#B39463",
+      "moss": "#35553F",
+      "status-paid": "#35553F",
+      "status-paid-bg": "#E3E6E0",
+      "status-pending": "#575E58",
+      "status-pending-bg": "#E7E7E3",
+      "status-due-soon": "#8A5300",
+      "status-due-soon-bg": "#EDE6D8",
+      "status-overdue": "#A3352A",
+      "status-overdue-bg": "#F0E2DE",
+      "status-forecast": "#4A6274",
+      "status-forecast-bg": "#FBFAF6",
+      "amount-income": "#2C5E70",
+      "amount-expense": "#1B211E",
+      "amount-forecast": "#4A6274",
+      "cat-housing": "#355292",
+      "cat-utilities": "#499BB8",
+      "cat-groceries": "#6C8A61",
+      "cat-dining": "#B57D87",
+      "cat-transport": "#536FB2",
+      "cat-health": "#287353",
+      "cat-education": "#4B3D73",
+      "cat-shopping": "#9C7C22",
+      "cat-leisure": "#947299",
+      "cat-subscriptions": "#762F08",
+      "cat-other": "#7A7F78"
+    },
+    "dark": {
+      "background": "#121614",
+      "foreground": "#ECE9E0",
+      "card": "#1A1F1C",
+      "card-foreground": "#ECE9E0",
+      "popover": "#1A1F1C",
+      "popover-foreground": "#ECE9E0",
+      "primary": "#ECE9E0",
+      "primary-foreground": "#1B211E",
+      "secondary": "#2A312D",
+      "secondary-foreground": "#ECE9E0",
+      "muted": "#222824",
+      "muted-foreground": "#A9AEA6",
+      "accent": "#2A312D",
+      "accent-foreground": "#ECE9E0",
+      "destructive": "#F0907F",
+      "destructive-foreground": "#1B211E",
+      "border": "#2E3531",
+      "input": "#6E756D",
+      "ring": "#9DBBA5",
+      "chart-1": "#CFC9B8",
+      "chart-2": "#9DB4C6",
+      "chart-3": "#86BCD0",
+      "chart-4": "#F0907F",
+      "chart-5": "#8C7448",
+      "sidebar": "#1A1F1C",
+      "sidebar-foreground": "#ECE9E0",
+      "sidebar-primary": "#ECE9E0",
+      "sidebar-primary-foreground": "#1B211E",
+      "sidebar-accent": "#2A312D",
+      "sidebar-accent-foreground": "#ECE9E0",
+      "sidebar-border": "#2E3531",
+      "sidebar-ring": "#9DBBA5",
+      "surface-sunken": "#0D100E",
+      "sandstone": "#8C7448",
+      "moss": "#9DBBA5",
+      "status-paid": "#9DBBA5",
+      "status-paid-bg": "#2F3832",
+      "status-pending": "#A9AEA6",
+      "status-pending-bg": "#313632",
+      "status-due-soon": "#E2AE55",
+      "status-due-soon-bg": "#3A3625",
+      "status-overdue": "#F0907F",
+      "status-overdue-bg": "#3C312C",
+      "status-forecast": "#9DB4C6",
+      "status-forecast-bg": "#1A1F1C",
+      "amount-income": "#86BCD0",
+      "amount-expense": "#ECE9E0",
+      "amount-forecast": "#9DB4C6",
+      "cat-housing": "#7694D3",
+      "cat-utilities": "#98E0FC",
+      "cat-groceries": "#B1CEA7",
+      "cat-dining": "#FAC4CC",
+      "cat-transport": "#97B3F4",
+      "cat-health": "#75B595",
+      "cat-education": "#897DB3",
+      "cat-shopping": "#DFC177",
+      "cat-leisure": "#D8B7DD",
+      "cat-subscriptions": "#B87253",
+      "cat-other": "#8E948C"
+    }
+  },
+  "shadcnMapping": "Keys under color.light/dark are the CSS variable names without \"--\"; Tailwind exposes each as --color-<key> (bg-<key>, text-<key>, …).",
+  "typography": {
+    "families": {
+      "heading": "Schibsted Grotesk",
+      "sans": "Source Sans 3"
+    },
+    "responsiveAt": "lg (64rem)",
+    "scale": [
+      {
+        "token": "text-amount-hero",
+        "family": "sans",
+        "weight": 600,
+        "letterSpacing": "-0.02em",
+        "mobile": {
+          "size": 40,
+          "lineHeight": 44
+        },
+        "desktop": {
+          "size": 52,
+          "lineHeight": 56
+        }
+      },
+      {
+        "token": "text-display",
+        "family": "heading",
+        "weight": 600,
+        "letterSpacing": "-0.03em",
+        "mobile": {
+          "size": 34,
+          "lineHeight": 40
+        },
+        "desktop": {
+          "size": 48,
+          "lineHeight": 52
+        }
+      },
+      {
+        "token": "text-heading-1",
+        "family": "heading",
+        "weight": 600,
+        "letterSpacing": "-0.02em",
+        "mobile": {
+          "size": 26,
+          "lineHeight": 32
+        },
+        "desktop": {
+          "size": 32,
+          "lineHeight": 38
+        }
+      },
+      {
+        "token": "text-heading-2",
+        "family": "heading",
+        "weight": 600,
+        "letterSpacing": "-0.01em",
+        "mobile": {
+          "size": 20,
+          "lineHeight": 26
+        },
+        "desktop": {
+          "size": 22,
+          "lineHeight": 28
+        }
+      },
+      {
+        "token": "text-heading-3",
+        "family": "heading",
+        "weight": 600,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 17,
+          "lineHeight": 24
+        },
+        "desktop": {
+          "size": 18,
+          "lineHeight": 24
+        }
+      },
+      {
+        "token": "text-amount-lg",
+        "family": "sans",
+        "weight": 600,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 24,
+          "lineHeight": 28
+        },
+        "desktop": {
+          "size": 28,
+          "lineHeight": 32
+        }
+      },
+      {
+        "token": "text-body",
+        "family": "sans",
+        "weight": 400,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 16,
+          "lineHeight": 24
+        },
+        "desktop": {
+          "size": 16,
+          "lineHeight": 24
+        }
+      },
+      {
+        "token": "text-ui",
+        "family": "sans",
+        "weight": 400,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 16,
+          "lineHeight": 22
+        },
+        "desktop": {
+          "size": 14,
+          "lineHeight": 20
+        }
+      },
+      {
+        "token": "text-label",
+        "family": "sans",
+        "weight": 500,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 14,
+          "lineHeight": 20
+        },
+        "desktop": {
+          "size": 13,
+          "lineHeight": 18
+        }
+      },
+      {
+        "token": "text-caption",
+        "family": "sans",
+        "weight": 400,
+        "letterSpacing": "0em",
+        "mobile": {
+          "size": 13,
+          "lineHeight": 18
+        },
+        "desktop": {
+          "size": 13,
+          "lineHeight": 18
+        }
+      }
+    ],
+    "numbers": {
+      "fontVariantNumeric": "tabular-nums lining-nums",
+      "utility": "amount"
+    }
+  },
+  "spacing": {
+    "base": "4px",
+    "gutter": {
+      "mobile": "16px",
+      "desktop": "32px"
+    },
+    "rowHeight": {
+      "mobile": "56px",
+      "desktop": "44px"
+    },
+    "touchTarget": "44px"
+  },
+  "radius": {
+    "base": "6px",
+    "sm": "2px",
+    "md": "4px",
+    "lg": "6px",
+    "xl": "10px"
+  },
+  "shadow": {
+    "light": {
+      "shadow-xs": "0 1px 0 rgb(27 33 30 / 0.04)",
+      "shadow-sm": "0 1px 2px rgb(27 33 30 / 0.06), 0 1px 1px rgb(27 33 30 / 0.04)",
+      "shadow-md": "0 4px 12px -2px rgb(27 33 30 / 0.10), 0 2px 4px -2px rgb(27 33 30 / 0.06)",
+      "shadow-lg": "0 16px 40px -8px rgb(27 33 30 / 0.18), 0 4px 8px -4px rgb(27 33 30 / 0.08)"
+    },
+    "dark": {
+      "shadow-xs": "0 1px 0 rgb(0 0 0 / 0.30)",
+      "shadow-sm": "0 1px 2px rgb(0 0 0 / 0.40)",
+      "shadow-md": "0 4px 12px -2px rgb(0 0 0 / 0.50)",
+      "shadow-lg": "0 16px 40px -8px rgb(0 0 0 / 0.60)"
+    }
+  },
+  "border": {
+    "hairline": "1px",
+    "focus": "2px",
+    "rule": "3px double (totals)"
+  },
+  "motion": {
+    "duration": {
+      "duration-instant": "80ms",
+      "duration-fast": "140ms",
+      "duration-base": "200ms",
+      "duration-slow": "320ms"
+    },
+    "easing": {
+      "ease-standard": "cubic-bezier(0.2, 0, 0, 1)",
+      "ease-enter": "cubic-bezier(0, 0, 0.2, 1)",
+      "ease-exit": "cubic-bezier(0.4, 0, 1, 1)"
+    },
+    "reducedMotion": "All durations 0ms; animations and transitions collapse to 0.01ms."
+  },
+  "breakpoint": {
+    "sm": "40rem",
+    "md": "48rem",
+    "lg": "64rem",
+    "xl": "80rem",
+    "2xl": "96rem",
+    "_meaning": "phone < 40rem (360–430 px), tablet 40–80rem, desktop ≥ 80rem (1280 px)"
+  },
+  "contrastReport": {
+    "light": [
+      {
+        "fg": "foreground",
+        "bg": "background",
+        "ratio": 14.36,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "foreground",
+        "bg": "card",
+        "ratio": 15.67,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "background",
+        "ratio": 5.85,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "card",
+        "ratio": 6.39,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "muted",
+        "ratio": 5.34,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary-foreground",
+        "bg": "primary",
+        "ratio": 15.67,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "secondary-foreground",
+        "bg": "secondary",
+        "ratio": 12.29,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-foreground",
+        "bg": "accent",
+        "ratio": 13.11,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "destructive-foreground",
+        "bg": "destructive",
+        "ratio": 6.77,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "destructive",
+        "bg": "card",
+        "ratio": 6.49,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "input",
+        "bg": "background",
+        "ratio": 3.3,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "input",
+        "bg": "card",
+        "ratio": 3.61,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "ring",
+        "bg": "background",
+        "ratio": 7.3,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "ring",
+        "bg": "card",
+        "ratio": 7.97,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "status-paid",
+        "bg": "status-paid-bg",
+        "ratio": 6.6,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-pending",
+        "bg": "status-pending-bg",
+        "ratio": 5.38,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-due-soon",
+        "bg": "status-due-soon-bg",
+        "ratio": 5.1,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-overdue",
+        "bg": "status-overdue-bg",
+        "ratio": 5.37,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-forecast",
+        "bg": "card",
+        "ratio": 6.11,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "amount-income",
+        "bg": "card",
+        "ratio": 6.83,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "amount-forecast",
+        "bg": "card",
+        "ratio": 6.11,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "chart-1",
+        "bg": "card",
+        "ratio": 12.76,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-2",
+        "bg": "card",
+        "ratio": 6.11,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-3",
+        "bg": "card",
+        "ratio": 6.83,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-4",
+        "bg": "card",
+        "ratio": 6.49,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-housing",
+        "bg": "card",
+        "ratio": 7.25,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-utilities",
+        "bg": "card",
+        "ratio": 3.02,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-groceries",
+        "bg": "card",
+        "ratio": 3.69,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-dining",
+        "bg": "card",
+        "ratio": 3.22,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-transport",
+        "bg": "card",
+        "ratio": 4.69,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-health",
+        "bg": "card",
+        "ratio": 5.48,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-education",
+        "bg": "card",
+        "ratio": 9.08,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-shopping",
+        "bg": "card",
+        "ratio": 3.78,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-leisure",
+        "bg": "card",
+        "ratio": 3.92,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-subscriptions",
+        "bg": "card",
+        "ratio": 9.22,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-other",
+        "bg": "card",
+        "ratio": 3.92,
+        "min": 3,
+        "pass": true
+      }
+    ],
+    "dark": [
+      {
+        "fg": "foreground",
+        "bg": "background",
+        "ratio": 15.03,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "foreground",
+        "bg": "card",
+        "ratio": 13.77,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "background",
+        "ratio": 8.08,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "card",
+        "ratio": 7.39,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "muted-foreground",
+        "bg": "muted",
+        "ratio": 6.65,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "primary-foreground",
+        "bg": "primary",
+        "ratio": 13.48,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "secondary-foreground",
+        "bg": "secondary",
+        "ratio": 10.98,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "accent-foreground",
+        "bg": "accent",
+        "ratio": 10.98,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "destructive-foreground",
+        "bg": "destructive",
+        "ratio": 7.02,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "destructive",
+        "bg": "card",
+        "ratio": 7.16,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "input",
+        "bg": "background",
+        "ratio": 3.85,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "input",
+        "bg": "card",
+        "ratio": 3.52,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "ring",
+        "bg": "background",
+        "ratio": 8.77,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "ring",
+        "bg": "card",
+        "ratio": 8.03,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "status-paid",
+        "bg": "status-paid-bg",
+        "ratio": 5.82,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-pending",
+        "bg": "status-pending-bg",
+        "ratio": 5.45,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-due-soon",
+        "bg": "status-due-soon-bg",
+        "ratio": 6.01,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-overdue",
+        "bg": "status-overdue-bg",
+        "ratio": 5.4,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "status-forecast",
+        "bg": "card",
+        "ratio": 7.78,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "amount-income",
+        "bg": "card",
+        "ratio": 8.05,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "amount-forecast",
+        "bg": "card",
+        "ratio": 7.78,
+        "min": 4.5,
+        "pass": true
+      },
+      {
+        "fg": "chart-1",
+        "bg": "card",
+        "ratio": 10.11,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-2",
+        "bg": "card",
+        "ratio": 7.78,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-3",
+        "bg": "card",
+        "ratio": 8.05,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "chart-4",
+        "bg": "card",
+        "ratio": 7.16,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-housing",
+        "bg": "card",
+        "ratio": 5.53,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-utilities",
+        "bg": "card",
+        "ratio": 11.46,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-groceries",
+        "bg": "card",
+        "ratio": 9.75,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-dining",
+        "bg": "card",
+        "ratio": 11.01,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-transport",
+        "bg": "card",
+        "ratio": 8.01,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-health",
+        "bg": "card",
+        "ratio": 7.0,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-education",
+        "bg": "card",
+        "ratio": 4.49,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-shopping",
+        "bg": "card",
+        "ratio": 9.57,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-leisure",
+        "bg": "card",
+        "ratio": 9.34,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-subscriptions",
+        "bg": "card",
+        "ratio": 4.43,
+        "min": 3,
+        "pass": true
+      },
+      {
+        "fg": "cat-other",
+        "bg": "card",
+        "ratio": 5.38,
+        "min": 3,
+        "pass": true
+      }
+    ]
+  }
+}
