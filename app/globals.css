@@ -368,11 +368,3 @@
   text-underline-offset: 0.2em;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
-}
