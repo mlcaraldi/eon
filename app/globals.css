@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 /* Eon design tokens · Strata · v1.0 (08 nov 2026)
    Tailwind CSS v4 + shadcn/ui. Drop into app/globals.css after `@import "tailwindcss";`
