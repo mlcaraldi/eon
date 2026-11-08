@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Schibsted_Grotesk, Source_Sans_3 } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const heading = Schibsted_Grotesk({
   subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-schibsted",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const sans = Source_Sans_3({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-source-sans",
 });
 
 export const metadata: Metadata = {
@@ -21,9 +23,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${heading.variable} ${sans.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
