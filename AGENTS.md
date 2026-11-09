@@ -12,6 +12,7 @@
 | Product, stack, design system rules | [`CLAUDE.md`](CLAUDE.md) |
 | Design spec, tokens, brand files | [`docs/design/`](docs/design/) |
 | Build order for the first steps | [`docs/design/KICKOFF.md`](docs/design/KICKOFF.md) |
+| Phases and what comes next | [`docs/roadmap.md`](docs/roadmap.md) |
 | Decision log | [`docs/decisions.md`](docs/decisions.md) |
 | What came from Eon 1.0 and what it taught us | [`docs/from-eon-1.md`](docs/from-eon-1.md) |
 | Env vars (all of them, documented) | `.env.example` |

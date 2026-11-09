@@ -7,11 +7,22 @@ this month. Product and design rules: [`CLAUDE.md`](CLAUDE.md).
 
 ## Status
 
-Not scaffolded yet. The order is pitch deck, then brand and design system
-(done, `docs/design/`), then screens and code following
-[`docs/design/KICKOFF.md`](docs/design/KICKOFF.md).
+Phase 0 done: Next.js scaffold and the gate. Brand and design system are done
+(`docs/design/`). Next: phases 1 and 2 of [`docs/roadmap.md`](docs/roadmap.md).
+How a new person is onboarded: [`docs/onboarding.md`](docs/onboarding.md).
 
-## Commands (after KICKOFF step 0b)
+## First run
+
+```bash
+npm ci
+cp .env.example .env   # nothing required yet; later phases document each variable
+npm run dev
+```
+
+Open http://localhost:3000. For now it shows a placeholder page; the month
+view arrives in phase 2.
+
+## Commands
 
 ```bash
 npm run dev      # dev server on http://localhost:3000

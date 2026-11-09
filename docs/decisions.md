@@ -65,11 +65,49 @@ entry; supersede it with a new one that links back.
   rules came from Eon 1.0 (which took them from fill-site). Keeping them
   apart avoids duplicate rules drifting.
 
-## Not decided yet
+## D7 · No pitch deck; the roadmap sets the order
 
-- **Data, API and auth stack.** 1.0 used tRPC, Prisma, Supabase Postgres and
-  Auth.js. Pick again for 2.0 with an entry here; don't assume 1.0's choice.
-- **Open Finance provider.** A MeuPluggy account exists from 1.0; confirm
-  before building the sync.
-- **Claude's role.** 1.0 had an Ask Claude fallback and a read-only MCP
-  connector. Whether 2.0 needs either is open.
+- **Decided (08 nov 2026):** the pitch deck step in D5 is dropped. Brand
+  and design system before screens still holds. The phases from here on are
+  in [`roadmap.md`](roadmap.md).
+- **Why:** Marcelo asked to go straight to planning the development
+  phases; the design system already carries the product vision.
+- **Supersedes:** the first step of D5 only.
+
+## D8 · Neon, Drizzle and Better Auth on Vercel
+
+- **Decided (08 nov 2026, Marcelo's go-ahead on the roadmap):** Postgres on
+  Neon (through the Vercel Marketplace), Drizzle ORM, Server Components and
+  Server Actions (no tRPC), Better Auth with one allow-listed Google account
+  (`EON_ALLOWED_EMAIL`), hosted on Vercel.
+- **Why:** a database branch per preview deploy makes "dev and prod never
+  share a database" automatic; Drizzle has no generated client and maps
+  `bigint` centavos and `date` columns cleanly; one user needs no API layer.
+- **Alternative:** Supabase with Prisma 7 (known from 1.0). Lost: free
+  projects pause, 1.0 hit its IPv6-only host, and Prisma's client put
+  migrations inside the build. Supabase with Drizzle stays an acceptable
+  second choice.
+- **Scope:** phase 3 onward. Details in [`roadmap.md`](roadmap.md).
+
+## D9 · Pluggy through MeuPluggy as the Open Finance provider
+
+- **Decided (08 nov 2026):** read bank data through MeuPluggy (free consumer
+  app) and a Pluggy development application, confirmed by the phase 1 spike
+  before any sync code is written.
+- **Why:** paid aggregators cost R$ 540 to R$ 6.000 a month, the wrong scale
+  for one household.
+- **Alternative:** OFX/CSV upload. Lost as the primary path (1.0's second
+  biggest pain); kept as a fallback that feeds the same bank-line table.
+- **Scope:** phases 1 and 3. A no-go from the spike supersedes this entry.
+
+## D10 · Claude only as read-only connector
+
+- **Decided (08 nov 2026):** Claude is not in the core loop. Phase 7 adds a
+  read-only MCP connector; category suggestions are added only if more than
+  about 10% of card spending is uncategorized after a month of real data
+  (description, amount and date only; a rule or a person confirms).
+- **Why:** the core output is a few exact numbers that must be glanceable
+  and deterministic.
+- **Alternative:** Claude as the main interface (chat first). Lost for the
+  same reason. No in-app "Ask Claude" box: it duplicates the connector.
+- **Scope:** phase 7.
