@@ -10,7 +10,9 @@
     "check-types": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run lint && npm run check-types && npm test"
+    "check": "npm run lint && npm run check-types && npm test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",

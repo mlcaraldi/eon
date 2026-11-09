@@ -28,6 +28,8 @@ view arrives in phase 2.
 npm run dev      # dev server on http://localhost:3000
 npm run check    # the gate: lint (0 warnings), types, tests; same as CI
 npm test         # unit tests (Vitest), no database needed
+npm run db:generate   # write a SQL migration from lib/db/schema.ts (no database needed)
+npm run db:migrate    # apply migrations to DATABASE_URL: explicit, never part of the build
 ```
 
 ## Working here
