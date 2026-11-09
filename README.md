@@ -7,8 +7,8 @@ this month. Product and design rules: [`CLAUDE.md`](CLAUDE.md).
 
 ## Status
 
-Not scaffolded yet. The order is pitch deck, then brand and design system
-(done, `docs/design/`), then screens and code following
+Not scaffolded yet. Brand and design system are done (`docs/design/`).
+Next: the phases in [`docs/roadmap.md`](docs/roadmap.md), starting with
 [`docs/design/KICKOFF.md`](docs/design/KICKOFF.md).
 
 ## Commands (after KICKOFF step 0b)

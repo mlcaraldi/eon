@@ -65,6 +65,15 @@ entry; supersede it with a new one that links back.
   rules came from Eon 1.0 (which took them from fill-site). Keeping them
   apart avoids duplicate rules drifting.
 
+## D7 · No pitch deck; the roadmap sets the order
+
+- **Decided (08 nov 2026):** the pitch deck step in D5 is dropped. Brand
+  and design system before screens still holds. The phases from here on are
+  in [`roadmap.md`](roadmap.md).
+- **Why:** Marcelo asked to go straight to planning the development
+  phases; the design system already carries the product vision.
+- **Supersedes:** the first step of D5 only.
+
 ## Not decided yet
 
 - **Data, API and auth stack.** 1.0 used tRPC, Prisma, Supabase Postgres and
@@ -73,3 +82,6 @@ entry; supersede it with a new one that links back.
   before building the sync.
 - **Claude's role.** 1.0 had an Ask Claude fallback and a read-only MCP
   connector. Whether 2.0 needs either is open.
+
+Recommendations for all three (proposed D8 to D10) are in
+[`roadmap.md`](roadmap.md); each moves above this line once approved.
