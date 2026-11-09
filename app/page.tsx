@@ -5,7 +5,7 @@ import { MonthSummary } from "@/components/eon/month-summary";
 import { MonthSwitcher } from "@/components/eon/month-switcher";
 import { EmptyState } from "@/components/eon/states";
 import { ThemeToggle } from "@/components/eon/theme-toggle";
-import { getSession } from "@/lib/auth";
+import { getSessionState } from "@/lib/auth/server";
 import { readConfig } from "@/lib/config";
 import { monthOf, parseMonth, shiftMonth } from "@/lib/dates";
 import { formatMonth } from "@/lib/format";
@@ -15,7 +15,7 @@ import { summarizeMonth } from "@/lib/status";
 export default async function Home({ searchParams }: PageProps<"/">) {
   // Once sign-in is configured the app is private; until then the sample shows.
   const config = readConfig(process.env);
-  if (config.auth.ready && config.database.ready && !(await getSession())) redirect("/sign-in");
+  if (config.auth.ready && (await getSessionState()).state !== "ok") redirect("/sign-in");
 
   const params = await searchParams;
   const raw = typeof params.month === "string" ? params.month : SAMPLE_MONTH;
