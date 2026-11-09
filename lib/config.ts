@@ -18,8 +18,8 @@ export function readConfig(env: Env) {
     database: feature(env, ["DATABASE_URL"]),
     auth: feature(
       env,
-      ["BETTER_AUTH_SECRET", "BETTER_AUTH_URL", "GOOGLE_CLIENT_ID", "GOOGLE_CLIENT_SECRET", "EON_ALLOWED_EMAIL"],
-      { BETTER_AUTH_SECRET: 32 },
+      ["NEON_AUTH_BASE_URL", "NEON_AUTH_COOKIE_SECRET", "EON_ALLOWED_EMAIL"],
+      { NEON_AUTH_COOKIE_SECRET: 32 },
     ),
     openFinance: feature(env, ["PLUGGY_CLIENT_ID", "PLUGGY_CLIENT_SECRET"]),
     cron: feature(env, ["CRON_SECRET"], { CRON_SECRET: 16 }),

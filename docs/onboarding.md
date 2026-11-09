@@ -68,14 +68,14 @@ reasoning as D4). A returning person lands on the first unfinished step.
 ### 0 · Sign in
 
 - **Screen:** logo, one line ("Your month at a glance, read from your
-  banks."), one button "Continue with Google". Below, small: "Eon only reads.
+  banks."), an email field and "Send me a code", then a code field (no password; D11). Below, small: "Eon only reads.
   It never moves money."
 - **Person must know:** nothing yet.
 - **App explains:** that access is by invitation only.
 - **Not on the allow list:** "This account is not invited." with the email
   shown and a "Use another account" action. No account is created, nothing
   is stored (rule: identity from session, allow-list from env).
-- **Missing config** (no Google keys, no allow list): a developer-facing
+- **Missing config** (no Neon Auth URL, cookie secret or allow list): a developer-facing
   panel that names the missing env vars and links `.env.example`, never a
   blank page or a stack trace. The app degrades gracefully (AGENTS.md).
 - **Errors:** sign-in cancelled returns to the same screen with "Sign-in was
@@ -171,7 +171,7 @@ the one list the bank cannot hand over directly, so Eon proposes it.
   few that cannot be detected, plus "Skip for now": the month view then
   works with whatever matched. This is a decision-log item: it is the single
   allowed manual entry and exists because the bank feed cannot supply it
-  (AGENTS.md, lean first). Recorded as D11 when phase 4 is built.
+  (AGENTS.md, lean first). Recorded as D12 when phase 4 is built.
 - **Person must know:** how paid will be set. A single line under the list:
   "Eon marks a commitment paid when a matching line leaves your account. You
   never mark anything yourself."
@@ -267,7 +267,7 @@ dark.
 | 1 Spike | Findings note records, for onboarding: consent length, what the provider shows at consent, redirect/return behavior, what a partial consent looks like, how expiry surfaces. These replace the placeholders in steps 2 and 3. |
 | 2 Design system, month view on sample | `EmptyState`, `ErrorState`, `StatusPill` with reason, `Skeleton` states exist and are shown on a dev-only gallery route for every condition in the empty-state table and error table (sample data). Tooltip/tap reasons present on every pill and `≈` value. Copy passes the voice rules by test (no `!`, no emoji). |
 | 3 Data, auth, sync | Steps 0 to 3 work end to end: sign-in with allow list, "not invited" state, welcome, pre-consent screen, link, first-sync progress, per-account failure, partial link. Missing env vars produce a named, specific message. Unknown figures show "No data" before first sync, covered by a test. Consent expiry date stored and shown. Walkthrough on a fresh database reaches "synced" in under 10 minutes of real time. |
-| 4 Commitments | Step 4: suggestions from recurring lines, Keep / Not a commitment / edit, skip path, the only manual add is for undetected items and has a decision entry (D11). Every status has an evidence line and a "Why isn't this paid?" view. First-run through the month view needs no manual toggles. Time to first correct month view under 10 minutes, attention under 5, measured on Marcelo's real accounts. |
+| 4 Commitments | Step 4: suggestions from recurring lines, Keep / Not a commitment / edit, skip path, the only manual add is for undetected items and has a decision entry (D12). Every status has an evidence line and a "Why isn't this paid?" view. First-run through the month view needs no manual toggles. Time to first correct month view under 10 minutes, attention under 5, measured on Marcelo's real accounts. |
 | 5 Invoice and categories | Invoice screen opens with the "one bill" explanation; installments explained once (`3/10` means installment 3 of 10). Category fixes explain "applies to future charges from this merchant". "Not enough history" empty state verified with a new account. |
 | 6 Forecast and investable | Every forecast value has a reason line; the formula view for "available to invest" shows all terms; negative and unknown cases verified (no `0` for unknown). Copy reviewed for not sounding like investment advice (product tells how much, not where). |
 | 7 Claude, read-only | Settings shows connector state (off/on), what fields it exposes, and how to revoke its token. The privacy panel updates automatically when it is on. Connection steps are written for claude.ai ("Add connector, paste this URL, approve") and tested once end to end. |

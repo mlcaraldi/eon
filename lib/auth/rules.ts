@@ -5,12 +5,24 @@ export function isAllowedEmail(email: string, allowed: string | null): boolean {
   return email.trim().toLowerCase() === a;
 }
 
-export type SignInProblem = "cancelled" | "not-invited" | "failed";
+/**
+ * The signed-in user may use Eon only if their address is the allowed one and
+ * is verified, so nobody can claim it by signing up with it first.
+ */
+export function isAllowedUser(
+  user: { email: string; emailVerified: boolean },
+  allowed: string | null,
+): boolean {
+  return user.emailVerified && isAllowedEmail(user.email, allowed);
+}
+
+export type SignInProblem = "cancelled" | "not-invited" | "bad-code" | "failed";
 
 /** Maps the `error` query value on /sign-in to what the screen says. */
 export function signInProblem(error: string | undefined): SignInProblem | null {
   if (!error) return null;
   if (error === "access_denied") return "cancelled";
-  if (error === "unable_to_create_user" || error === "not_invited") return "not-invited";
+  if (error === "not_invited") return "not-invited";
+  if (error === "bad_code") return "bad-code";
   return "failed";
 }

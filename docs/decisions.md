@@ -111,3 +111,22 @@ entry; supersede it with a new one that links back.
 - **Alternative:** Claude as the main interface (chat first). Lost for the
   same reason. No in-app "Ask Claude" box: it duplicates the connector.
 - **Scope:** phase 7.
+
+## D11 · Neon Auth with an emailed code replaces Better Auth with Google
+
+- **Decided (09 nov 2026, Marcelo):** use Neon's managed auth (`@neon/auth`,
+  built on Better Auth) with an emailed one-time code, not self-hosted
+  Better Auth with Google. One allow-listed email (`EON_ALLOWED_EMAIL`); a
+  session for any other address, or an unverified one, counts as "not
+  invited". No password is stored.
+- **Why:** no Google Cloud console setup, no OAuth client to maintain, users
+  stay in Eon's own Neon database (`neon_auth` schema), and the code proves
+  the person controls the email each time.
+- **Alternative:** Better Auth + Google (D8's original auth choice). Lost on
+  setup cost for a one-person app; it stays a valid fallback.
+- **Risk:** Neon Auth is pre-1.0 (`@neon/auth` pinned exactly); anyone can
+  call its sign-up API, so the allow-list is enforced in Eon on every
+  request, never by the auth service. The server SDK does not type the OTP
+  methods, so the code form uses the browser client through `/api/auth`.
+- **Supersedes:** the auth part of D8 only (database, Drizzle, Vercel stand).
+

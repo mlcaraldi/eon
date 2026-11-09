@@ -7,14 +7,7 @@ const EMOJI = /\p{Extended_Pictographic}/u;
 describe("state copy follows the voice rules (CLAUDE.md rule 6)", () => {
   const strings = [
     ...allStateCopy.flatMap((c) => [c.title, c.body, c.action ?? ""]),
-    signInCopy.tagline,
-    signInCopy.readOnly,
-    signInCopy.cancelled,
-    signInCopy.failed,
-    signInCopy.notInvited.title,
-    signInCopy.notInvited.body,
-    signInCopy.notConfigured.title,
-    signInCopy.notConfigured.body,
+    ...Object.values(signInCopy).flatMap((v) => (typeof v === "string" ? [v] : Object.values(v))),
   ];
   it("has no exclamation marks", () => {
     expect(strings.filter((s) => s.includes("!"))).toEqual([]);

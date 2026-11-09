@@ -59,7 +59,7 @@ Why no tRPC: one user, one app, Server Components read data directly and
 Server Actions cover the few writes (commitment definitions, category
 fixes). tRPC was 1.0's heaviest layer for no client that needed it.
 
-Auth: one Google account on an allow list (`EON_ALLOWED_EMAIL`), sessions
+Auth (superseded by D11: Neon Auth with an emailed code): one Google account on an allow list (`EON_ALLOWED_EMAIL`), sessions
 in the database. A passkey can come later. Every query is still scoped to
 the owner (AGENTS.md).
 
